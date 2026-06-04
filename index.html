@@ -28,17 +28,56 @@
 :root{
   --cream:#F9F5EF;--dark:#214144;--teal:#22BEB7;--lime:#CADC71;
   --lavender:#8294EB;--orange:#DF6436;--lteal:#9CE5DE;
-  --llime:#E6EBBD;--llav:#BAC3FF;--peach:#E7B89F;
-}
+  --llime:#E6EBBD;--llav:#BAC3FF;--peach:#E7B89F;}
 body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh}
 
 /* ── NAV ── */
-#topnav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;align-items:center;border-bottom:3px solid var(--teal)}
-.nav-logo{padding:10px 20px;font-size:13px;font-weight:800;color:var(--teal);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;border-right:1px solid rgba(255,255,255,0.1)}
-.nav-tabs{display:flex;flex:1;overflow-x:auto}
-.nav-tab{padding:12px 18px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:rgba(255,255,255,0.5);cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-3px;white-space:nowrap;transition:all 0.2s}
-.nav-tab:hover{color:var(--lteal)}
-.nav-tab.active{color:var(--lime);border-bottom-color:var(--lime)}
+#topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--teal);
+  width: 100%;          /* ADD: ensure full width */
+  box-sizing: border-box; /* ADD: prevent overflow from borders */}
+
+.nav-logo {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;       /* ADD: prevent logo from being squished */}
+
+.nav-tabs {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;   /* CHANGE: auto → hidden to remove scrollbar */
+  flex-wrap: wrap;      /* ADD: wrap tabs instead of scrolling */
+  min-width: 0;         /* ADD: allow flex shrinking below content size */}
+
+.nav-tab {
+  padding: 17px 18px;   /* CHANGE: 12px → 17px top/bottom (+10px total height) */
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  white-space: nowrap;
+  transition: all 0.2s;}
+
+.nav-tab:hover { color: var(--lteal); }
+.nav-tab.active { color: var(--lime); border-bottom-color: var(--lime); }
 
 /* ── ROLE BAR ── */
 #role-bar{background:var(--dark);padding:8px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.08)}
