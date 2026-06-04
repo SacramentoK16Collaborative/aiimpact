@@ -57,7 +57,7 @@ body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);
 .nav-tabs {
   display: flex;
   flex: 1;
-  overflow-x: hidden;   /* CHANGE: auto → hidden to remove scrollbar */
+  overflow: hidden;  /* replaces both overflow-x and overflow-y lines */
   flex-wrap: wrap;      /* ADD: wrap tabs instead of scrolling */
   min-width: 0;         /* ADD: allow flex shrinking below content size */}
 
