@@ -87,7 +87,13 @@ body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);
 .role-pill.active{background:var(--teal);border-color:var(--teal);color:var(--dark)}
 
 /* ── SECTIONS ── */
-.section{display:none;padding:28px 24px;max-width:1300px;margin:0 auto}
+.section {
+  display: none;
+  padding: 28px 24px;
+  max-width: 100%;        /* CHANGE: 1300px → 100% */
+  margin: 0 auto;
+  box-sizing: border-box; /* ADD: prevents padding from causing overflow */
+}
 .section.active{display:block}
 
 /* ── SECTION HEADER ── */
